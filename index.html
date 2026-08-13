@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AAB COUTURE | Master Tailoring & Bespoke</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#e2c48d',
+                            DEFAULT: '#c5a059',
+                            dark: '#9a7b3c',
+                        },
+                        darkBg: '#0b0b0b',
+                        cardSurface: '#141414',
+                        borderSubtle: '#222222'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0b0b; color: #f3f3f3; -webkit-tap-highlight-color: transparent; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        .glass-nav { background: rgba(11, 11, 11, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-black pb-20 md:pb-0">
+
+    <!-- MOBILE-OPTIMIZED HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-borderSubtle">
+        <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+            <a href="#home" class="flex flex-col">
+                <span class="font-serif text-xl font-bold tracking-widest text-white">AAB <span class="text-gold">COUTURE</span></span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-gray-400 font-medium">Bespoke & Native</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-medium tracking-[0.2em] uppercase text-gray-300">
+                <a href="#home" class="hover:text-gold transition">Home</a>
+                <a href="#about" class="hover:text-gold transition">The House</a>
+                <a href="#services" class="hover:text-gold transition">Services</a>
+                <a href="#gallery" class="hover:text-gold transition">Lookbook</a>
+                <a href="#contact" class="hover:text-gold transition">Studio</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <button onclick="openBookingModal()" class="bg-gold text-black font-semibold px-5 py-2.5 text-[11px] tracking-widest uppercase hover:bg-gold-light transition">
+                    Book Appointment
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="md:hidden text-xl text-white p-2 focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile iOS-Style Dropdown Sheet -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-darkBg border-b border-borderSubtle px-6 py-6 space-y-4 shadow-2xl transition-all">
+            <a href="#home" class="mobile-link block text-sm font-medium uppercase tracking-widest py-2 border-b border-borderSubtle text-gray-300">Home</a>
+            <a href="#about" class="mobile-link block text-sm font-medium uppercase tracking-widest py-2 border-b border-borderSubtle text-gray-300">The House</a>
+            <a href="#services" class="mobile-link block text-sm font-medium uppercase tracking-widest py-2 border-b border-borderSubtle text-gray-300">Services</a>
+            <a href="#gallery" class="mobile-link block text-sm font-medium uppercase tracking-widest py-2 border-b border-borderSubtle text-gray-300">Lookbook</a>
+            <a href="#contact" class="mobile-link block text-sm font-medium uppercase tracking-widest py-2 text-gray-300">Studio & Address</a>
+            <button onclick="openBookingModal(); toggleMobileMenu();" class="w-full bg-gold text-black font-semibold py-3 text-xs tracking-widest uppercase mt-4">
+                Book Consultation
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center pt-16 px-4 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(11,11,11,0.5), rgba(11,11,11,0.98)), url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=1200');">
+        <div class="max-w-2xl mx-auto text-center z-10 py-12">
+            <span class="inline-block border border-gold/40 text-gold uppercase tracking-[0.25em] text-[10px] px-3 py-1 font-medium mb-6">
+                No 26 Akeushola Street Studio
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight mb-6 text-white leading-[1.1]">
+                Precision Fit. <br><span class="italic font-normal text-gold">Uncompromising</span> Style.
+            </h1>
+            <p class="text-gray-400 text-sm sm:text-base font-light mb-8 max-w-lg mx-auto leading-relaxed">
+                Welcome to AAB Couture. We engineer clean lines, sharp modern silhouettes, and immaculate traditional native wears crafted precisely for you.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 w-full max-w-sm mx-auto">
+                <button onclick="openBookingModal()" class="w-full bg-gold text-black font-semibold py-4 text-xs tracking-[0.2em] uppercase hover:bg-gold-light transition">
+                    Book Fitting Session
+                </button>
+                <a href="https://wa.me/2348056643369?text=Hello%20AAB%20Couture,%20I%20want%20to%20make%20an%20enquiry." target="_blank" class="w-full border border-white/20 text-white font-medium py-4 text-xs tracking-[0.2em] uppercase hover:border-gold hover:text-gold transition text-center">
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND STORY / ABOUT SECTION -->
+    <section id="about" class="py-20 px-5 bg-cardSurface border-y border-borderSubtle">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-gold uppercase tracking-[0.2em] text-[10px] font-semibold block mb-2">The AAB Standard</span>
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-white font-serif">Tailored Not Just to Size, But to Character</h2>
+            <p class="text-gray-400 text-sm font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+                At AAB Couture, every stitch tells a story of dedication. Whether you're stepping out in a razor-sharp executive suit or a regal, hand-detailed agbada set from our studio at <strong class="text-white font-normal">No 26 Akeushola Street</strong>, we guarantee absolute distinction.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-borderSubtle text-center">
+                <div>
+                    <span class="block font-serif text-xl sm:text-2xl font-bold text-gold">100%</span>
+                    <span class="text-[11px] uppercase tracking-wider text-gray-400">Custom Canvas</span>
+                </div>
+                <div>
+                    <span class="block font-serif text-xl sm:text-2xl font-bold text-gold">Precision</span>
+                    <span class="text-[11px] uppercase tracking-wider text-gray-400">Hand Measurements</span>
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <span class="block font-serif text-xl sm:text-2xl font-bold text-gold">Direct</span>
+                    <span class="text-[11px] uppercase tracking-wider text-gray-400">Concierge Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 px-5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-xl mx-auto mb-14">
+                <span class="text-gold uppercase tracking-[0.2em] text-[10px] font-semibold block mb-2">Offerings</span>
+                <h2 class="text-3xl font-bold text-white">Crafted Services</h2>
+                <div class="w-10 h-0.5 bg-gold mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-cardSurface p-6 sm:p-8 border border-borderSubtle hover:border-gold/40 transition">
+                    <div class="text-gold text-2xl mb-4"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3 class="text-lg font-serif font-bold text-white mb-2">Bespoke Suits</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed mb-6">
+                        Custom two and three-piece suits engineered for weddings, corporate executives, and high-profile red carpets.
+                    </p>
+                    <span class="text-gold text-[10px] tracking-widest uppercase font-semibold">Custom Structured</span>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-cardSurface p-6 sm:p-8 border border-borderSubtle hover:border-gold/40 transition">
+                    <div class="text-gold text-2xl mb-4"><i class="fa-solid fa-shirt"></i></div>
+                    <h3 class="text-lg font-serif font-bold text-white mb-2">Traditional & Agbada</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed mb-6">
+                        Exquisite native wear, premium grand boubous, and intricately embroidered agbada sets tailored to perfection.
+                    </p>
+                    <span class="text-gold text-[10px] tracking-widest uppercase font-semibold">Hand-Detailed</span>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-cardSurface p-6 sm:p-8 border border-borderSubtle hover:border-gold/40 transition">
+                    <div class="text-gold text-2xl mb-4"><i class="fa-solid fa-scissors"></i></div>
+                    <h3 class="text-lg font-serif font-bold text-white mb-2">Alterations & Styling</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed mb-6">
+                        Expert resizing and wardrobe styling modifications to turn off-the-rack pieces into tailored masterpieces.
+                    </p>
+                    <span class="text-gold text-[10px] tracking-widest uppercase font-semibold">Flawless Fit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY / LOOKBOOK SECTION -->
+    <section id="gallery" class="py-20 px-5 bg-cardSurface">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-xl mx-auto mb-14">
+                <span class="text-gold uppercase tracking-[0.2em] text-[10px] font-semibold block mb-2">Portfolio</span>
+                <h2 class="text-3xl font-bold text-white">The AAB Lookbook</h2>
+                <div class="w-10 h-0.5 bg-gold mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
+                <div class="relative overflow-hidden group aspect-[4/5] bg-darkBg">
+                    <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&q=80&w=700" alt="Suit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent"></div>
+                    <div class="absolute bottom-3 left-3 right-3">
+                        <span class="text-gold text-[9px] uppercase tracking-widest">Bespoke Suit</span>
+                        <h4 class="text-white font-serif text-sm">Midnight Navy Tuxedo</h4>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden group aspect-[4/5] bg-darkBg">
+                    <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&q=80&w=700" alt="Native" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent"></div>
+                    <div class="absolute bottom-3 left-3 right-3">
+                        <span class="text-gold text-[9px] uppercase tracking-widest">Traditional</span>
+                        <h4 class="text-white font-serif text-sm">Modern Agbada Ensemble</h4>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden group aspect-[4/5] bg-darkBg col-span-2 md:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=700" alt="Executive" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent"></div>
+                    <div class="absolute bottom-3 left-3 right-3">
+                        <span class="text-gold text-[9px] uppercase tracking-widest">Executive</span>
+                        <h4 class="text-white font-serif text-sm">Charcoal Double-Breasted</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STUDIO CONTACT SECTION -->
+    <section id="contact" class="py-20 px-5">
+        <div class="max-w-4xl mx-auto bg-cardSurface p-8 sm:p-12 border border-borderSubtle text-center">
+            <span class="text-gold uppercase tracking-[0.2em] text-[10px] font-semibold block mb-2">Visit Or Call</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Connect With AAB Couture</h2>
+            <p class="text-gray-400 text-xs sm:text-sm font-light mb-8 max-w-md mx-auto">
+                Drop by our workspace or send a direct message on WhatsApp for instant pricing, fabric choices, and measurement bookings.
+            </p>
+            
+            <div class="space-y-3 text-sm text-gray-300 mb-8">
+                <p class="flex items-center justify-center gap-3"><i class="fa-solid fa-location-dot text-gold"></i> No 26 Akeushola Street</p>
+                <p class="flex items-center justify-center gap-3"><i class="fa-solid fa-phone text-gold"></i> 08056643369</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+                <a href="https://wa.me/2348056643369?text=Hello%20AAB%20Couture,%20I%20want%20to%20discuss%20an%20order." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3.5 px-6 text-xs tracking-widest uppercase transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+                </a>
+                <button onclick="openBookingModal()" class="bg-gold text-black font-semibold py-3.5 px-6 text-xs tracking-widest uppercase hover:bg-gold-light transition">
+                    Book Appointment Form
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE BOOKING MODAL -->
+    <div id="booking-modal" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center px-4">
+        <div class="bg-cardSurface border border-borderSubtle w-full max-w-md p-6 sm:p-8 relative">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-serif text-xl font-bold text-white mb-2">Book a Fitting Session</h3>
+            <p class="text-gray-400 text-xs mb-6 font-light">Fill this out to queue your measurement slot directly via WhatsApp with AAB Couture.</p>
+            
+            <form id="appointment-form" onsubmit="submitAppointment(event)" class="space-y-4">
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Your Full Name</label>
+                    <input type="text" id="client-name" required class="w-full bg-darkBg border border-borderSubtle text-white text-sm px-3 py-2.5 focus:border-gold outline-none">
+                </div>
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Service Required</label>
+                    <select id="service-type" class="w-full bg-darkBg border border-borderSubtle text-white text-sm px-3 py-2.5 focus:border-gold outline-none">
+                        <option>Bespoke Suit</option>
+                        <option>Traditional / Agbada</option>
+                        <option>Alterations</option>
+                        <option>General Consultation</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Preferred Date</label>
+                    <input type="date" id="appointment-date" required class="w-full bg-darkBg border border-borderSubtle text-white text-sm px-3 py-2.5 focus:border-gold outline-none">
+                </div>
+                <button type="submit" class="w-full bg-gold text-black font-semibold py-3.5 text-xs tracking-widest uppercase hover:bg-gold-light transition mt-2">
+                    Send to WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING FIXED WHATSAPP BUTTON (iPhone Optimized) -->
+    <a href="https://wa.me/2348056643369?text=Hello%20AAB%20Couture,%20I%20am%20reaching%20out%20from%20your%20website." target="_blank" class="fixed bottom-5 right-5 z-40 bg-emerald-600 text-white w-13 h-13 rounded-full flex items-center justify-center shadow-2xl hover:bg-emerald-500 transition transform active:scale-95">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkBg py-10 border-t border-borderSubtle text-center text-xs text-gray-500 px-4">
+        <p class="mb-1 text-white font-serif tracking-wider">AAB COUTURE</p>
+        <p>No 26 Akeushola Street &bull; 08056643369</p>
+        <p class="text-[10px] mt-4 text-gray-600">&copy; 2026 AAB Couture. Built for iPhone & Mobile Excellence.</p>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMobileMenu);
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Booking Modal Management
+        const modal = document.getElementById('booking-modal');
+
+        function openBookingModal() {
+            modal.classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            modal.classList.add('hidden');
+        }
+
+        // WhatsApp Custom Form Flow
+        function submitAppointment(e) {
+            e.preventDefault();
+            const name = document.getElementById('client-name').value;
+            const service = document.getElementById('service-type').value;
+            const date = document.getElementById('appointment-date').value;
+
+            const message = `Hello AAB Couture, my name is *${name}*. I would like to book an appointment for *${service}* on *${date}*. Please confirm availability.`;
+            const encodedMessage = encodeURIComponent(message);
+            
+            window.open(`https://wa.me/2348056643369?text=${encodedMessage}`, '_blank');
+            closeBookingModal();
+        }
+    </script>
+</body>
+</html>
